@@ -7,9 +7,20 @@ app.get('/', function (req, res){
                 res.send("err")
             }
             else {
-                res.send(rows[0].name);
+                var table ="<table>"
+                for(var i =0; i <= rows.length;i++)
+                {
+                    table +="<tr><td>" +
+                   rows[i].name + "</td><td>" +
+                    rows[i].phone + "</td><td>" +
+                    rows[i].email + "</td></tr>";
+                }
+
+                table += "</table>"
             }
         })
     })
 })
 module.exports = app;
+
+
